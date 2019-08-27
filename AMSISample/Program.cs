@@ -16,7 +16,10 @@ namespace AMSISample
             using (var scanner = new MalwareScanner())
             {
                 var selfTest = scanner.TestIfItIsWorking();
+                Console.WriteLine($"IsItWorking: {selfTest.IsItWorking}");
+                Console.WriteLine($"Exception: {selfTest.Exception}");
                 var result = scanner.HasVirus(virus, nameof(virus));
+                Console.WriteLine($"HasVirus: {result}");
                 //// ToDo: log positive scan result or selfTest.IsItWorking != true
             }
         }
